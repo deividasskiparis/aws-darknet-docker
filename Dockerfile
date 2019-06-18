@@ -25,4 +25,4 @@ RUN mkdir backup
 
 RUN aws s3 sync s3://social-turbo-ml/data data/
 RUN ./darknet/darknet detector train config.data network.cfg yolov3-tiny.conv.15
-RUN aws s3 cp /backup/network_final.weights s3://social-turbo-ml/weights
+RUN aws s3 cp backup/network_final.weights s3://social-turbo-ml/weights
