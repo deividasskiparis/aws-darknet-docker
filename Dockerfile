@@ -9,9 +9,7 @@ RUN apt-get update && \
         python3-setuptools \
         git-core
 
-RUN pip3 install setuptools wheel virtualenv --upgrade
-
-RUN pip3 --no-cache-dir install --upgrade awscli
+RUN pip3 install setuptools wheel virtualenv awscli --upgrade
 
 RUN git clone https://github.com/pjreddie/darknet.git darknet && \
 	cd darknet && \
@@ -22,10 +20,13 @@ WORKDIR /opt/docker
 COPY config/* ./
 COPY scripts/* ./
 
-ENV MODEL_NAME network
+ARG S3
+
+ENV MODEL_NAME yolov3-tiny
 ENV NETWORK_FILENAME ${MODEL_NAME}.cfg
-ENV PRETRAINED_WEIGHTS yolov3-tiny.conv.15
+ENV PRETRAINED_WEIGHTS ${MODEL_NAME}.conv.15
 ENV DATA_FILENAME config.data
-ENV CLASS_NAMES class.names
+ENV S3_BUCKET_NAME ${S3}
+
 
 CMD /opt/docker/train-and-save.sh
