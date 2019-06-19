@@ -54,6 +54,10 @@ NOTE: If running locally instead on EC2, you will have to provide AWS credential
 ```
 docker run -d --runtime=nvidia --name=train-yolo -e "AWS_ACCESS_KEY_ID=*********" -e "AWS_SECRET_ACCESS_KEY=*********" train-yolo
 ```
+Check anytime how your container is doing by getting logs from it
+```
+docker logs train-yolo
+```
 
 7. After the training is finished, the trained weights will be uploaded to you S3 bucket `/models` directory
 
