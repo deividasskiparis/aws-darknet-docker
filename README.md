@@ -39,7 +39,7 @@ data/images/image-name-2.jpg
     4. SSH into the instance. [More info](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html)
     5. clone this repo
     ```
-    git clone https://github.com/Scout24/social-turbo-ml.git aws-darknet-yolo-docker && cd aws-darknet-yolo-docker
+    git clone https://github.com/deividasskiparis/aws-darknet-yolo-docker.git aws-darknet-yolo-docker && cd aws-darknet-yolo-docker
     ```
 
 5. Build docker image
