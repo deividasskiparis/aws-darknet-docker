@@ -20,6 +20,7 @@ RUN git clone https://github.com/pjreddie/darknet.git darknet && \
 WORKDIR /opt/docker
 
 COPY config/* ./
+COPY scripts/* ./
 
 ENV MODEL_NAME network
 ENV NETWORK_FILENAME ${MODEL_NAME}.cfg
