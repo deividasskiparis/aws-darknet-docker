@@ -5,7 +5,7 @@ Works seemlesly with AWS EC2 and S3
 
 ## Steps:
 1. Create a S3 bucket on AWS
-2. Upload pretrained weights, images, train.txt and test.txt lists to the S3 bucket.
+2. Upload pretrained weights (optional), images, train.txt and test.txt lists to the S3 bucket.
 Expected structure of the bucket
 ```
 your-s3-bucket/
