@@ -1,5 +1,5 @@
 classes = 80
-train  = /opt/docker/data/train.txt
-valid  = /opt/docker/data/test.txt
-names = /opt/docker/coco.names
-backup = /opt/docker/backup
+train  = data/train.txt
+valid  = data/test.txt
+names = class.names
+backup = backup

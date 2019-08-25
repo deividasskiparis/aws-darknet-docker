@@ -20,13 +20,9 @@ WORKDIR /opt/docker
 COPY config/* ./
 COPY scripts/* ./
 
-ARG S3
-
-ENV MODEL_NAME yolov3-tiny
-ENV NETWORK_FILENAME ${MODEL_NAME}.cfg
-ENV PRETRAINED_WEIGHTS ${MODEL_NAME}.conv.15
+ENV NETWORK_FILENAME network.cfg
 ENV DATA_FILENAME config.data
-ENV S3_BUCKET_NAME ${S3}
+ENV PRETRAINED_WEIGHTS_FILENAME ""
+ENV S3_BUCKET_NAME ""
 
-
-CMD /opt/docker/train-and-save.sh
+CMD ["./train.sh"]
